@@ -1,13 +1,183 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,600;1,700;1,800&family=Roboto+Mono:ital,wght@0,100;0,300;0,500;0,600;0,700;1,500;1,600&family=Roboto:ital,wght@0,100;0,500;0,700;0,900;1,100;1,700&display=swap");
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background-color: #f0f0f0;
+  color: #333;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body,
+input {
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  max-width: 100vw;
+  width: 100%;
+  max-height: 100vh;
+  height: 100%;
+  overflow-y: auto;
+  position: fixed;
+  top: 5%;
+}
+
+.app-container {
+  display: flex;
+  padding-bottom: 200px;
+  flex-direction: row;
+}
+
+.form-container {
+  max-width: 30vw;
+  width: 100%;
+  margin: 40px 20px;
+  position: relative;
+  left: 5%;
+}
+
+form {
+  display: grid;
+}
+
+form input,
+form select {
+  max-width: 400px;
+  width: 100%;
+  height: 50px;
+  background-color: #fff;
+  margin: 10px 0;
+  border-radius: 20px;
+  box-shadow: #333 8px 5px;
+  border: none;
+  font-size: 1.1rem;
+  font-weight: 300;
+  padding: 0 20px;
+  outline: none;
+}
+
+button {
+  width: 150px;
+  height: 40px;
+  border: solid 2px;
+  outline: none;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: #fff;
+  color: #333;
+  text-transform: uppercase;
+  font-weight: 300;
+  margin-top: 20px;
+  box-shadow: #333 8px 5px;
+}
+
+button:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+.task-container {
+  max-width: 70vw;
+  width: 100%;
+  height: auto;
+  position: relative;
+  padding-top: 80px;
+}
+
+.task-list {
+  max-width: 70%;
+  width: 100%;
+  height: 70vh;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.task {
+  max-width: 150px;
+  width: 100%;
+  height: auto;
+  align-items: center;
+  background-color: #fff;
+  margin: 10px 10px;
+  box-shadow: #333 8px 5px;
+  text-align: center;
+  padding-top: 5px;
+  border-radius: 20px;
+}
+
+.task-done {
+  background-color: #333;
+  color: #fff;
+  max-width: 150px;
+  width: 100%;
+  height: auto;
+  align-items: center;
+  margin: 10px 10px;
+  box-shadow: #333 8px 5px;
+  text-align: center;
+  padding-top: 5px;
+  border-radius: 20px;
+}
+
+footer {
+  position: inherit;
+  width: 100%;
+  height: auto;
+  color: #333;
+  text-align: left;
+  padding: 20px;
+  margin-top: 30px;
+}
+
+h2 {
+  text-align: center;
+}
+
+.filter {
+  display: flex;
+  align-items: center;
+}
+
+.filter select {
+  max-width: 200px;
+  text-transform: uppercase;
+  width: 100%;
+  height: 40px;
+  background-color: #fff;
+  margin: 10px 0;
+  border-radius: 10px;
+  border: solid 2px;
+  box-shadow: #333 8px 5px;
+  font-size: 1.1rem;
+  font-weight: 300;
+  padding: 0 20px;
+}
+
+.filter button {
+  margin: 0px;
+}
+
+@media (max-width: 1024px) {
+  .app-container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  .form-container {
+    max-width: 100vw;
+    width: 100%;
+    margin: 40px 20px;
+    position: relative;
+    left: 0%;
+  }
+}
+
+@media (min-width: 570px) {
 }
