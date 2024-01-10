@@ -2,10 +2,12 @@ import { useEffect, useState } from "react";
 
 export default function App() {
   // const [tasks, setTasks] = useState([]);
-  const [tasks, setTasks] = useState(function () {
-    const storedTask = localStorage.getItem("tasks");
-    return JSON.parse(storedTask);
-  });
+  const [tasks, setTasks] = useState(
+    function () {
+      const storedTask = localStorage.getItem("tasks");
+      return JSON.parse(storedTask);
+    } || []
+  );
 
   function handleAddTask(task) {
     setTasks((tasks) => [...tasks, task]);
