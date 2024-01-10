@@ -14,7 +14,7 @@ export default function App() {
 
   function handleDoneTask(id) {
     setTasks((tasks) =>
-      tasks.map((item) =>
+      tasks?.map((item) =>
         item.id === id ? { ...item, done: !item.done } : item
       )
     );
@@ -25,7 +25,7 @@ export default function App() {
   }
 
   function handleDeleteTask(id) {
-    setTasks((tasks) => tasks.filter((task) => task.id !== id));
+    setTasks((tasks) => tasks?.filter((task) => task.id !== id));
   }
 
   useEffect(
