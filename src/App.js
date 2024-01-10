@@ -1,10 +1,15 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function App() {
-  const [tasks, setTasks] = useState([]);
+  // const [tasks, setTasks] = useState([]);
+  const [tasks, setTasks] = useState(function () {
+    const storedTask = localStorage.getItem("tasks");
+    return JSON.parse(storedTask);
+  });
 
   function handleAddTask(task) {
     setTasks((tasks) => [...tasks, task]);
+    console.log(tasks);
   }
 
   function handleDoneTask(id) {
@@ -22,6 +27,14 @@ export default function App() {
   function handleDeleteTask(id) {
     setTasks((tasks) => tasks.filter((task) => task.id !== id));
   }
+
+  useEffect(
+    function () {
+      localStorage.setItem("tasks", JSON.stringify(tasks));
+    },
+    [tasks]
+  );
+
   return (
     <div className="container">
       <div className="app-container">
